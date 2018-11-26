@@ -29,5 +29,5 @@
     </root>
 
     <!-- logback为java中的包 -->
-    <logger name="cn.wmyskxz.blog.controller"/>
+    <logger name="cn.yml.blog.controller"/>
 </configuration>

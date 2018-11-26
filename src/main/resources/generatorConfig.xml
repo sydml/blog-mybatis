@@ -6,7 +6,7 @@
 
     <context id="DB2Tables" targetRuntime="MyBatis3">
         <!--避免生成重复代码的插件-->
-        <plugin type="cn.wmyskxz.blog.util.OverIsMergeablePlugin"/>
+        <plugin type="cn.yml.blog.util.OverIsMergeablePlugin"/>
 
         <!--是否在代码中显示注释-->
         <commentGenerator>
@@ -21,7 +21,7 @@
         </jdbcConnection>
 
         <!--生成pojo类存放位置-->
-        <javaModelGenerator targetPackage="cn.wmyskxz.blog.entity" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="cn.yml.blog.entity" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
@@ -30,7 +30,7 @@
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
         <!--生成mapper类存放位置-->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="cn.wmyskxz.blog.dao" targetProject="src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="cn.yml.blog.dao" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
@@ -57,7 +57,6 @@
             <property name="my.isgen.usekeys" value="true"/>
             <property name="useActualColumnNames" value="false"/>
             <generatedKey column="id" sqlStatement="JDBC"/>
-            <columnOverride column="editor_mode" javaType="java.lang.Integer" jdbcType="int"/>
             <columnOverride column="content" javaType="java.lang.String" jdbcType="text"/>
         </table>
         <table tableName="tbl_article_info" domainObjectName="ArticleInfo" enableCountByExample="false"
@@ -96,7 +95,7 @@
             <generatedKey column="id" sqlStatement="JDBC"/>
         </table>
         <table tableName="tbl_article_picture" domainObjectName="ArticlePicture" enableCountByExample="false"
-               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true"
+               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">
             <property name="my.isgen.usekeys" value="true"/>
             <property name="useActualColumnNames" value="false"/>
