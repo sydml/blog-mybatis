@@ -31,9 +31,10 @@
     where id = #{id,jdbcType=BIGINT}
   </delete>
   <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cn.yml.blog.entity.ArticleContent" useGeneratedKeys="true">
-    insert into tbl_article_content (content, article_id, create_by, modified_by)
-    values ( #{content,jdbcType=text}, #{articleId,jdbcType=BIGINT},
-      #{createBy,jdbcType=TIMESTAMP}, #{modifiedBy,jdbcType=TIMESTAMP})
+    insert into tbl_article_content (content, article_id, create_by, 
+      modified_by)
+    values (#{content,jdbcType=text}, #{articleId,jdbcType=BIGINT}, #{createBy,jdbcType=TIMESTAMP}, 
+      #{modifiedBy,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cn.yml.blog.entity.ArticleContent" useGeneratedKeys="true">
     insert into tbl_article_content
