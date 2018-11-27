@@ -97,7 +97,6 @@ public class BackController extends BaseController {
     public String updateArticle(@PathVariable Long id, @RequestBody ArticleDto articleDto) {
         articleDto.setId(id);
         articleService.updateArticle(articleDto);
-//        System.out.println(articleDto.getTop());
         return null;
     }
 

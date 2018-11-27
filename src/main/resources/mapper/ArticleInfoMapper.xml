@@ -18,7 +18,7 @@
   <select id="selectTopAll" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
-    from tbl_article_info order by id, is_top desc
+    from tbl_article_info order by is_top desc
   </select>
 
   <select id="selectAll" resultMap="BaseResultMap">

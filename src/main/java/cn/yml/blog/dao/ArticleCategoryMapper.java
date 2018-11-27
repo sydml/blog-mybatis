@@ -1,6 +1,7 @@
 package cn.yml.blog.dao;
 
 import cn.yml.blog.entity.ArticleCategory;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -17,9 +18,9 @@ public interface ArticleCategoryMapper {
 
     int updateByPrimaryKey(ArticleCategory record);
 
-    List<ArticleCategory> selectByCategoryId(Long categoryId);
+    List<ArticleCategory> selectByCategoryId(@Param(value="categoryId")Long categoryId);
 
-    void deleteByCategoryId(Long categoryId);
+    void deleteByCategoryId(@Param(value="categoryId") Long categoryId);
 
-    List<ArticleCategory> selectByArticleId(Long articleId);
+    List<ArticleCategory> selectByArticleId(@Param(value="articleId") Long articleId);
 }

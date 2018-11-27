@@ -3,7 +3,7 @@
 <mapper namespace="cn.yml.blog.dao.ArticleContentMapper">
   <resultMap id="BaseResultMap" type="cn.yml.blog.entity.ArticleContent">
     <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="content" jdbcType="text" property="content" />
+    <result column="content" jdbcType="CLOB" property="content" />
     <result column="article_id" jdbcType="BIGINT" property="articleId" />
     <result column="create_by" jdbcType="TIMESTAMP" property="createBy" />
     <result column="modified_by" jdbcType="TIMESTAMP" property="modifiedBy" />
@@ -33,7 +33,7 @@
   <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cn.yml.blog.entity.ArticleContent" useGeneratedKeys="true">
     insert into tbl_article_content (content, article_id, create_by, 
       modified_by)
-    values (#{content,jdbcType=text}, #{articleId,jdbcType=BIGINT}, #{createBy,jdbcType=TIMESTAMP}, 
+    values (#{content,jdbcType=CLOB}, #{articleId,jdbcType=BIGINT}, #{createBy,jdbcType=TIMESTAMP},
       #{modifiedBy,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cn.yml.blog.entity.ArticleContent" useGeneratedKeys="true">
@@ -54,7 +54,7 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="content != null">
-        #{content,jdbcType=text},
+        #{content,jdbcType=CLOB},
       </if>
       <if test="articleId != null">
         #{articleId,jdbcType=BIGINT},
@@ -71,7 +71,7 @@
     update tbl_article_content
     <set>
       <if test="content != null">
-        content = #{content,jdbcType=text},
+        content = #{content,jdbcType=CLOB},
       </if>
       <if test="articleId != null">
         article_id = #{articleId,jdbcType=BIGINT},
@@ -87,7 +87,7 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.yml.blog.entity.ArticleContent">
     update tbl_article_content
-    set content = #{content,jdbcType=text},
+    set content = #{content,jdbcType=CLOB},
       article_id = #{articleId,jdbcType=BIGINT},
       create_by = #{createBy,jdbcType=TIMESTAMP},
       modified_by = #{modifiedBy,jdbcType=TIMESTAMP}

@@ -72,7 +72,7 @@ public class ArticleServiceImpl implements ArticleService {
 
 	/**
 	 * 删除一篇文章
-	 * 说明：需要对应删除tbl_article_picture/tbl_article_content/tbl_article_category表中的内容
+	 * 说明：需要对应删除tbl_article_picture/tbl_article_content/tbl_article_category/tbl_category_info表中的内容
 	 *
 	 * @param id
 	 */
@@ -88,6 +88,8 @@ public class ArticleServiceImpl implements ArticleService {
 		articleContentMapper.deleteByPrimaryKey(articleDto.getArticleContentId());
 		// 删除文章分类信息表
 		articleCategoryMapper.deleteByPrimaryKey(articleDto.getArticleCategoryId());
+		// 扣减文章分类信息的数量
+		categoryInfoMapper.deductNumber(articleDto.getCategoryId());
 	}
 
 	/**

@@ -1,6 +1,7 @@
 package cn.yml.blog.dao;
 
 import cn.yml.blog.entity.ArticleContent;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -17,5 +18,5 @@ public interface ArticleContentMapper {
 
     int updateByPrimaryKey(ArticleContent record);
 
-    List<ArticleContent> selectByArticleId(Long articleId);
+    List<ArticleContent> selectByArticleId(@Param(value="articleId") Long articleId);
 }

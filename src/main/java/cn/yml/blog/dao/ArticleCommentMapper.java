@@ -1,6 +1,7 @@
 package cn.yml.blog.dao;
 
 import cn.yml.blog.entity.ArticleComment;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -17,5 +18,5 @@ public interface ArticleCommentMapper {
 
     int updateByPrimaryKey(ArticleComment record);
 
-    List<ArticleComment> selectByArticleId(Long articleId);
+    List<ArticleComment> selectByArticleId(@Param(value="articleId") Long articleId);
 }

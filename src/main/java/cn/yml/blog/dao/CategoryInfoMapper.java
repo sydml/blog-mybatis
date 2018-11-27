@@ -1,6 +1,7 @@
 package cn.yml.blog.dao;
 
 import cn.yml.blog.entity.CategoryInfo;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -18,4 +19,6 @@ public interface CategoryInfoMapper {
     int updateByPrimaryKey(CategoryInfo record);
 
     List<CategoryInfo> selectAll();
+
+    void deductNumber(@Param("id") Long id);
 }
